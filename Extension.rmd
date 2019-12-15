@@ -1,0 +1,41 @@
+---
+title: CITS1001 Extensions for Project 2
+author: \emph{Brandon Barker}
+date: \emph{2019}
+output: pdf_document
+papersize: a4
+---
+
+# saveImage() Method
+
+This method is in the StegoImage.java class
+
+```
+public void saveImage(String filename)
+```
+
+The first feature adds the ability to save a StegoImage as a local image.
+This method takes the BufferedImage from StegoImage, and writes it to a jpeg
+with the name `filename`.
+
+# StegoImage() Constructor
+
+This constructor is in the StegoImage.java class
+
+```
+public StegoSecret(String filename, String message, int inputwidth, int inputheight)
+```
+
+This constructor takes `filename, message, inputwidth, inputheight` and
+constructs a StegoImage with a BufferedImage containing the `message`. This
+image is the size specified in the parameters. This constructor primarily
+relies on the method `private BufferedImage text2Image(String message)`. This
+method takes the `message` and writes it to and returns a BufferedImage. This
+method also 'scales' the text in the image. If all of the message fits onto
+one line, the text is maximsed to the length of the line (fills the line). If
+the text does fit on a single line, the text is split evenly by length amongst
+multiple lines.
+
+This feature paired with the saveImage method allows custom messages to be created
+and shared. This functionality was not possible before
+
